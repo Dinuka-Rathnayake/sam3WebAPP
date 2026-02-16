@@ -1,1 +1,4 @@
+# requirements.txt
 flask==2.3.2
+dotenv
+huggingface_hub
