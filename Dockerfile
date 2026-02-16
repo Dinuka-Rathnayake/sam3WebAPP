@@ -47,6 +47,7 @@ WORKDIR /app
 # COPY test.py test.py
 COPY main.py .
 COPY requirements.txt .
+COPY .env .
 
 # install dependencies 
 RUN pip install --no-cache-dir -r requirements.txt
