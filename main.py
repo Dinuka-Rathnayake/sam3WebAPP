@@ -1,10 +1,9 @@
-# create flask app
+# create flask app for sam3
 import base64
 import os
 from flask import Flask
 from flask import Flask, jsonify, request
 from urllib.request import urlopen
-import os 
 
 ## import torch
 # from transformers import Sam3Processor, Sam3Model
@@ -17,8 +16,8 @@ load_dotenv()
 HuggingFace_token = os.getenv("HuggingFace_token")
  
 # login to huggingface via token
-# from huggingface_hub import login
-# login(token=HuggingFace_token)
+from huggingface_hub import login
+login(token=HuggingFace_token)
 
 
 # # loadmodel function
@@ -125,8 +124,7 @@ def boundingBox():
 
     # just return "okay" as response
     return jsonify({
-        'status': 'okay',
-        'received_path': image_path,
+
         'image_b64': image_b64
         # 'results': results
     })
